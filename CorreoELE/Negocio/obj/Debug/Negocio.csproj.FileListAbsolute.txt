@@ -1,12 +1,11 @@
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
 C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Negocio\bin\Debug\Negocio.dll
 C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Negocio\bin\Debug\Negocio.pdb
-C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
-C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
-C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Negocio\obj\Debug\Negocio.dll
-C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Negocio\obj\Debug\Negocio.pdb
 C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Negocio\bin\Debug\Dao.dll
 C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Negocio\bin\Debug\Datos.dll
 C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Negocio\bin\Debug\Dao.pdb
-C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Negocio\bin\Debug\Dao.dll.config
 C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Negocio\bin\Debug\Datos.pdb
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
 C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Negocio\obj\Debug\Negocio.dll
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Negocio\obj\Debug\Negocio.pdb

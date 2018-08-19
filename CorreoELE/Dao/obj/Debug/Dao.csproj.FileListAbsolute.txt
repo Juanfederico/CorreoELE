@@ -1,0 +1,9 @@
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Dao\bin\Debug\Datos.dll
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Dao\bin\Debug\Datos.pdb
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Dao\obj\Debug\Dao.csprojAssemblyReference.cache
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Dao\obj\Debug\Dao.csproj.CoreCompileInputs.cache
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Dao\obj\Debug\Dao.csproj.CopyComplete
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Dao\obj\Debug\Dao.dll
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Dao\obj\Debug\Dao.pdb
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Dao\bin\Debug\Dao.dll
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Dao\bin\Debug\Dao.pdb

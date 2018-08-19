@@ -48,9 +48,6 @@
     <Compile Include="UsuarioDao.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">
       <Project>{fba56336-2589-459d-934b-40f614c645a2}</Project>
       <Name>Datos</Name>

@@ -99,7 +99,7 @@
       <Name>Datos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Negocio\Negocio.csproj">
-      <Project>{239297d9-50c9-4f0b-936d-70f23bcdd26e}</Project>
+      <Project>{b32f32a4-3cc0-435c-b050-c3339f206978}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
   </ItemGroup>
