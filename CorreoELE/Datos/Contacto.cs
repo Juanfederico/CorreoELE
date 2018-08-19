@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    class Contacto
+    public class Contacto
     {
         private Usuario usuario;
         private Detalle detalleusuario;

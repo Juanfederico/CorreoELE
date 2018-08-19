@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    class Mail
+    public class Mail
     {
         private int idmail;
         private Detalle remitente;

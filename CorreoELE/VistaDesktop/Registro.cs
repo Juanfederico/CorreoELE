@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Datos;
+using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,29 +54,18 @@ namespace VistaDesktop
 
         private void registrar_Click(object sender, EventArgs e)
         {
-            String conexion = @"Server=JUAMPI-PC;Database=correoele;Trusted_Connection=True";
-            String sql_detalle = "INSERT INTO usuario_detalle (nick, nombre, apellido) VALUES ('"+nick.Text+"', '"+nombre.Text+"', '"+apellido.Text+ "') SELECT SCOPE_IDENTITY();";
-            String sql_usuario = "INSERT INTO usuario VALUES ('"+direccion.Text+"@correoele.com', '"+password.Text+"', null);";
-            SqlConnection conn = new SqlConnection(conexion);
-            SqlCommand comando; //Ejecuta un comando SQL en una conexión
-            SqlDataReader reader; //Variable donde se capturan los resultados de la query (filas afectadas o tabla/s)
-
-            try
+            if (password.Text.Equals(confirmpassword.Text))
             {
-                conn.Open();
-                comando = new SqlCommand(sql_detalle, conn);
-                reader = comando.ExecuteReader();
-                reader.Read();
-                int idpedido_usuario = (Int32)reader.GetSqlValue(0);
-                /*while (reader.Read())
-                {
-                    MessageBox.Show()
-                }*/
-                conn.Close();
+                Detalle detalle = new Detalle(nick.Text, nombre.Text, apellido.Text);
+                Usuario usuario = new Usuario(direccion.Text, password.Text, detalle);
+                UsuarioABM usuarioAbm = new UsuarioABM();
+                int ultimoID = usuarioAbm.RegistrarUsuario(usuario);
+                MessageBox.Show("Usuario registrado correctamente");
+                //MessageBox.Show(ultimoID.ToString());
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error al abrir la conexión");
+                MessageBox.Show("La dos contraseñas ingresadas son diferentes");
             }
         }
     }

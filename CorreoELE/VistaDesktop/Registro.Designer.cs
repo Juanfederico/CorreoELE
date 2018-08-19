@@ -139,6 +139,7 @@
             // 
             this.confirmpassword.Location = new System.Drawing.Point(164, 180);
             this.confirmpassword.Name = "confirmpassword";
+            this.confirmpassword.PasswordChar = '*';
             this.confirmpassword.Size = new System.Drawing.Size(100, 20);
             this.confirmpassword.TabIndex = 10;
             // 

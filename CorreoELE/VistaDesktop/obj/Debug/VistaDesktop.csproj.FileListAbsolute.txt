@@ -9,3 +9,11 @@ C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDeskto
 C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDesktop\bin\Debug\VistaDesktop.pdb
 C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDesktop\obj\Debug\VistaDesktop.exe
 C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDesktop\obj\Debug\VistaDesktop.pdb
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDesktop\bin\Debug\Dao.dll
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDesktop\bin\Debug\Dao.pdb
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDesktop\bin\Debug\Dao.dll.config
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDesktop\obj\Debug\VistaDesktop.csproj.CopyComplete
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDesktop\bin\Debug\Datos.dll
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDesktop\bin\Debug\Datos.pdb
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDesktop\bin\Debug\Negocio.dll
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDesktop\bin\Debug\Negocio.pdb

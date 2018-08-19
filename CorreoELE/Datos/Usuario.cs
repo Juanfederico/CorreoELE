@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    class Usuario
+    public class Usuario
     {
         private int idusuario;
         private String direccion;
@@ -25,8 +25,8 @@ namespace Datos
         public int Idusuario { get => idusuario; set => idusuario = value; }
         public string Direccion { get => direccion; set => direccion = value; }
         public string Password { get => password; set => password = value; }
-        internal Detalle Detalle { get => detalle; set => detalle = value; }
-        internal List<Contacto> Contactos { get => contactos; set => contactos = value; }
-        internal List<Mail> Mails { get => mails; set => mails = value; }
+        public Detalle Detalle { get => detalle; set => detalle = value; }
+        public List<Contacto> Contactos { get => contactos; set => contactos = value; }
+        public List<Mail> Mails { get => mails; set => mails = value; }
     }
 }

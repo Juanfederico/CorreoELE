@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,29 +31,15 @@ namespace VistaDesktop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String conexion = @"Server=JUAMPI-PC;Database=correoele;Trusted_Connection=True";
-            String sql = "INSERT INTO usuario VALUES ('hola@hola.com', '123456', null);";
-            SqlConnection conn = new SqlConnection(conexion);
-            SqlCommand comando; //Ejecuta un comando SQL en una conexión
-            SqlDataReader reader; //Variable donde se capturan los resultados de la query (filas afectadas o tabla/s)
+            //String conexion = @"Server=JUAMPI-PC;Database=correoele;Trusted_Connection=True";
+            //String sql = "INSERT INTO usuario VALUES ('hola@hola.com', '123456', null);";
+            //SqlConnection conn = new SqlConnection(conexion);
+            //SqlCommand comando; //Ejecuta un comando SQL en una conexión
+            //SqlDataReader reader; //Variable donde se capturan los resultados de la query (filas afectadas o tabla/s)
+            UsuarioABM usuarioAbm = new UsuarioABM();
 
-            try
-            {
-                conn.Open();
-                comando = new SqlCommand(sql, conn);
-                //reader = comando.ExecuteReader();
-                int cantidad = comando.ExecuteNonQuery();
-                MessageBox.Show(cantidad.ToString());
-                /*while (reader.Read())
-                {
-                    MessageBox.Show()
-                }*/
-                conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al abrir la conexión");
-            }
+
+            MessageBox.Show("Error al abrir la conexión");
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)

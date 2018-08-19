@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    class Detalle
+    public class Detalle
     {
         private int iddetalle;
         private String nick;
