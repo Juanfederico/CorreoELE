@@ -15,6 +15,8 @@ namespace Datos
         private String contenido;
         private DateTime fechaenvio;
 
+        public Mail() { }
+
         public Mail(Detalle remitente, Detalle destinatario, string asunto, string contenido)
         {
             this.Remitente = remitente;

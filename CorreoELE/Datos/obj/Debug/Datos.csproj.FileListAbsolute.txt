@@ -3,3 +3,4 @@ C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Datos\bin\D
 C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
 C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Datos\obj\Debug\Datos.dll
 C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Datos\obj\Debug\Datos.pdb
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\Datos\obj\Debug\Datos.csprojAssemblyReference.cache

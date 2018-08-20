@@ -16,3 +16,5 @@ C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDeskto
 C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDesktop\obj\Debug\VistaDesktop.csproj.CopyComplete
 C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDesktop\obj\Debug\VistaDesktop.exe
 C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDesktop\obj\Debug\VistaDesktop.pdb
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDesktop\obj\Debug\VistaDesktop.InicioUsuario.resources
+C:\Users\Juampi\Desktop\Sistemas\Programacion\C#\CorreoELE\CorreoELE\VistaDesktop\obj\Debug\VistaDesktop.AgregarContacto.resources

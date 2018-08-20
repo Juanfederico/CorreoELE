@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dao
 {
-    class MailDao
+    public class MailDao
     {
     }
 }

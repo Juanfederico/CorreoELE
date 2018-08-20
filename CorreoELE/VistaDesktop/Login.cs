@@ -1,4 +1,5 @@
-﻿using Negocio;
+﻿using Datos;
+using Negocio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,15 +32,15 @@ namespace VistaDesktop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //String conexion = @"Server=JUAMPI-PC;Database=correoele;Trusted_Connection=True";
-            //String sql = "INSERT INTO usuario VALUES ('hola@hola.com', '123456', null);";
-            //SqlConnection conn = new SqlConnection(conexion);
-            //SqlCommand comando; //Ejecuta un comando SQL en una conexión
-            //SqlDataReader reader; //Variable donde se capturan los resultados de la query (filas afectadas o tabla/s)
             UsuarioABM usuarioAbm = new UsuarioABM();
-
-
-            MessageBox.Show("Error al abrir la conexión");
+            Usuario usuario = usuarioAbm.LoginUsuario(direccion.Text, password.Text);
+            if(usuario == null) MessageBox.Show("Direccion o contraseña incorrecta");
+            else
+            {
+                this.Hide();
+                InicioUsuario ini_usuario = new InicioUsuario(usuario);
+                ini_usuario.ShowDialog();
+            }
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)

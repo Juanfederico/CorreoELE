@@ -19,5 +19,11 @@ namespace Negocio
             int idUsuario = dao.InsertUsuario(usuario);
             return idUsuario;
         }
+
+        public Usuario LoginUsuario(String direccion, String password)
+        {
+            return dao.SelectUsuario(direccion, password);
+        }
+
     }
 }

@@ -14,6 +14,8 @@ namespace Datos
         private String apellido;
         private DateTime fechacreacion;
 
+        public Detalle() { }
+
         public Detalle(string nick, string nombre, string apellido)
         {
             this.Nick = nick;

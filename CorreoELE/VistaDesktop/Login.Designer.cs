@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.usuario = new System.Windows.Forms.TextBox();
+            this.direccion = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();
             this.label_registro = new System.Windows.Forms.Label();
-            this.label_usuario = new System.Windows.Forms.Label();
+            this.label_direccion = new System.Windows.Forms.Label();
             this.label_password = new System.Windows.Forms.Label();
             this.iniciar = new System.Windows.Forms.Button();
             this.registrar = new System.Windows.Forms.Button();
             this.label_correoele = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // usuario
+            // direccion
             // 
-            this.usuario.Location = new System.Drawing.Point(120, 90);
-            this.usuario.Name = "usuario";
-            this.usuario.Size = new System.Drawing.Size(100, 20);
-            this.usuario.TabIndex = 0;
+            this.direccion.Location = new System.Drawing.Point(120, 109);
+            this.direccion.Name = "direccion";
+            this.direccion.Size = new System.Drawing.Size(100, 20);
+            this.direccion.TabIndex = 0;
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(121, 134);
+            this.password.Location = new System.Drawing.Point(121, 145);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
             this.password.Size = new System.Drawing.Size(100, 20);
@@ -58,26 +58,26 @@
             // label_registro
             // 
             this.label_registro.AutoSize = true;
-            this.label_registro.Location = new System.Drawing.Point(117, 251);
+            this.label_registro.Location = new System.Drawing.Point(117, 247);
             this.label_registro.Name = "label_registro";
             this.label_registro.Size = new System.Drawing.Size(98, 13);
             this.label_registro.TabIndex = 2;
             this.label_registro.Text = "¿No tenés cuenta?";
             // 
-            // label_usuario
+            // label_direccion
             // 
-            this.label_usuario.AutoSize = true;
-            this.label_usuario.Location = new System.Drawing.Point(70, 93);
-            this.label_usuario.Name = "label_usuario";
-            this.label_usuario.Size = new System.Drawing.Size(43, 13);
-            this.label_usuario.TabIndex = 3;
-            this.label_usuario.Text = "Usuario";
-            this.label_usuario.Click += new System.EventHandler(this.label2_Click);
+            this.label_direccion.AutoSize = true;
+            this.label_direccion.Location = new System.Drawing.Point(70, 112);
+            this.label_direccion.Name = "label_direccion";
+            this.label_direccion.Size = new System.Drawing.Size(52, 13);
+            this.label_direccion.TabIndex = 3;
+            this.label_direccion.Text = "Dirección";
+            this.label_direccion.Click += new System.EventHandler(this.label2_Click);
             // 
             // label_password
             // 
             this.label_password.AutoSize = true;
-            this.label_password.Location = new System.Drawing.Point(58, 137);
+            this.label_password.Location = new System.Drawing.Point(61, 148);
             this.label_password.Name = "label_password";
             this.label_password.Size = new System.Drawing.Size(61, 13);
             this.label_password.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             // iniciar
             // 
-            this.iniciar.Location = new System.Drawing.Point(124, 176);
+            this.iniciar.Location = new System.Drawing.Point(124, 182);
             this.iniciar.Name = "iniciar";
             this.iniciar.Size = new System.Drawing.Size(90, 23);
             this.iniciar.TabIndex = 5;
@@ -96,7 +96,7 @@
             // 
             // registrar
             // 
-            this.registrar.Location = new System.Drawing.Point(131, 270);
+            this.registrar.Location = new System.Drawing.Point(131, 266);
             this.registrar.Name = "registrar";
             this.registrar.Size = new System.Drawing.Size(75, 23);
             this.registrar.TabIndex = 6;
@@ -124,10 +124,10 @@
             this.Controls.Add(this.registrar);
             this.Controls.Add(this.iniciar);
             this.Controls.Add(this.label_password);
-            this.Controls.Add(this.label_usuario);
+            this.Controls.Add(this.label_direccion);
             this.Controls.Add(this.label_registro);
             this.Controls.Add(this.password);
-            this.Controls.Add(this.usuario);
+            this.Controls.Add(this.direccion);
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);
@@ -137,10 +137,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox usuario;
+        private System.Windows.Forms.TextBox direccion;
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Label label_registro;
-        private System.Windows.Forms.Label label_usuario;
+        private System.Windows.Forms.Label label_direccion;
         private System.Windows.Forms.Label label_password;
         private System.Windows.Forms.Button iniciar;
         private System.Windows.Forms.Button registrar;

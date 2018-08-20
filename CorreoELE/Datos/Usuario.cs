@@ -15,6 +15,8 @@ namespace Datos
         private List<Contacto> contactos;
         private List<Mail> mails;
 
+        public Usuario() { }
+
         public Usuario(string direccion, string password, Detalle detalle)
         {
             this.Direccion = direccion;
