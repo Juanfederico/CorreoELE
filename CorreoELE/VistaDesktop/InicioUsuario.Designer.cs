@@ -36,13 +36,13 @@
             this.panelMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.layout_contactos = new System.Windows.Forms.FlowLayoutPanel();
             this.agregarContacto = new System.Windows.Forms.Button();
-            this.eliminarContacto = new System.Windows.Forms.Button();
             this.verSolicitudes = new System.Windows.Forms.Button();
+            this.verBloqueados = new System.Windows.Forms.Button();
             this.panel_contactos = new System.Windows.Forms.Panel();
             this.tabla_contactos = new System.Windows.Forms.DataGridView();
             this.nick = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaAgregado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionContacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalle = new System.Windows.Forms.DataGridViewButtonColumn();
             this.layout_contactos.SuspendLayout();
             this.panel_contactos.SuspendLayout();
@@ -111,8 +111,8 @@
             // layout_contactos
             // 
             this.layout_contactos.Controls.Add(this.agregarContacto);
-            this.layout_contactos.Controls.Add(this.eliminarContacto);
             this.layout_contactos.Controls.Add(this.verSolicitudes);
+            this.layout_contactos.Controls.Add(this.verBloqueados);
             this.layout_contactos.Location = new System.Drawing.Point(101, 95);
             this.layout_contactos.Name = "layout_contactos";
             this.layout_contactos.Size = new System.Drawing.Size(353, 32);
@@ -132,24 +132,25 @@
             this.agregarContacto.UseVisualStyleBackColor = true;
             this.agregarContacto.Click += new System.EventHandler(this.agregarContacto_Click);
             // 
-            // eliminarContacto
-            // 
-            this.eliminarContacto.Location = new System.Drawing.Point(134, 3);
-            this.eliminarContacto.Name = "eliminarContacto";
-            this.eliminarContacto.Size = new System.Drawing.Size(107, 23);
-            this.eliminarContacto.TabIndex = 1;
-            this.eliminarContacto.Text = "Eliminar contacto";
-            this.eliminarContacto.UseVisualStyleBackColor = true;
-            this.eliminarContacto.Click += new System.EventHandler(this.button1_Click_2);
-            // 
             // verSolicitudes
             // 
-            this.verSolicitudes.Location = new System.Drawing.Point(247, 3);
+            this.verSolicitudes.Location = new System.Drawing.Point(134, 3);
             this.verSolicitudes.Name = "verSolicitudes";
-            this.verSolicitudes.Size = new System.Drawing.Size(100, 23);
+            this.verSolicitudes.Size = new System.Drawing.Size(106, 23);
             this.verSolicitudes.TabIndex = 2;
             this.verSolicitudes.Text = "Solicitudes";
             this.verSolicitudes.UseVisualStyleBackColor = true;
+            this.verSolicitudes.Click += new System.EventHandler(this.verSolicitudes_Click);
+            // 
+            // verBloqueados
+            // 
+            this.verBloqueados.Location = new System.Drawing.Point(246, 3);
+            this.verBloqueados.Name = "verBloqueados";
+            this.verBloqueados.Size = new System.Drawing.Size(103, 23);
+            this.verBloqueados.TabIndex = 3;
+            this.verBloqueados.Text = "Bloqueados";
+            this.verBloqueados.UseVisualStyleBackColor = true;
+            this.verBloqueados.Click += new System.EventHandler(this.button1_Click_3);
             // 
             // panel_contactos
             // 
@@ -161,15 +162,17 @@
             // 
             // tabla_contactos
             // 
+            this.tabla_contactos.AllowUserToDeleteRows = false;
             this.tabla_contactos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla_contactos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nick,
             this.direccion,
-            this.fechaAgregado,
+            this.direccionContacto,
             this.detalle});
             this.tabla_contactos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabla_contactos.Location = new System.Drawing.Point(0, 0);
             this.tabla_contactos.Name = "tabla_contactos";
+            this.tabla_contactos.ReadOnly = true;
             this.tabla_contactos.Size = new System.Drawing.Size(514, 185);
             this.tabla_contactos.TabIndex = 0;
             this.tabla_contactos.Visible = false;
@@ -178,26 +181,34 @@
             // nick
             // 
             this.nick.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nick.FillWeight = 77.15736F;
             this.nick.HeaderText = "Nick";
             this.nick.Name = "nick";
+            this.nick.ReadOnly = true;
             // 
             // direccion
             // 
             this.direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.direccion.HeaderText = "Direccion";
+            this.direccion.FillWeight = 107.6142F;
+            this.direccion.HeaderText = "Nombre";
             this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
             // 
-            // fechaAgregado
+            // direccionContacto
             // 
-            this.fechaAgregado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.fechaAgregado.HeaderText = "Agregado";
-            this.fechaAgregado.Name = "fechaAgregado";
+            this.direccionContacto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.direccionContacto.FillWeight = 107.6142F;
+            this.direccionContacto.HeaderText = "Direccion";
+            this.direccionContacto.Name = "direccionContacto";
+            this.direccionContacto.ReadOnly = true;
             // 
             // detalle
             // 
             this.detalle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.detalle.FillWeight = 107.6142F;
             this.detalle.HeaderText = "Detalle";
             this.detalle.Name = "detalle";
+            this.detalle.ReadOnly = true;
             this.detalle.Text = "Ver detalle";
             this.detalle.ToolTipText = "Ver detalle";
             // 
@@ -235,13 +246,13 @@
         private System.Windows.Forms.FlowLayoutPanel panelMenu;
         private System.Windows.Forms.FlowLayoutPanel layout_contactos;
         private System.Windows.Forms.Button agregarContacto;
-        private System.Windows.Forms.Button eliminarContacto;
         private System.Windows.Forms.Button verSolicitudes;
         private System.Windows.Forms.Panel panel_contactos;
         private System.Windows.Forms.DataGridView tabla_contactos;
+        private System.Windows.Forms.Button verBloqueados;
         private System.Windows.Forms.DataGridViewTextBoxColumn nick;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaAgregado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccionContacto;
         private System.Windows.Forms.DataGridViewButtonColumn detalle;
     }
 }

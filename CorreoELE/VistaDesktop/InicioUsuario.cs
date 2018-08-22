@@ -20,19 +20,25 @@ namespace VistaDesktop
         {
             InitializeComponent();
             label_bienvenido.Text += usuario.Detalle.Nick;
+            cargarDatosContacto(usuario);
+            usuarioSesion = usuario;
+        }
+
+        public void cargarDatosContacto(Usuario usuario)
+        {
+            tabla_contactos.Rows.Clear();
             ContactoABM contactoAbm = new ContactoABM();
             DataGridViewRow fila;
             //Trayendo lista de contactos del usuario y cargando la tabla
             List<Contacto> contactos = contactoAbm.traerContactosUsuario(usuario.Idusuario);
-            foreach(Contacto contacto in contactos)
+            foreach (Contacto contacto in contactos)
             {
                 fila = (DataGridViewRow)tabla_contactos.Rows[0].Clone();
                 fila.Cells[0].Value = contacto.Detallecontacto.Nick;
                 fila.Cells[1].Value = contacto.Detallecontacto.Nombre;
-                fila.Cells[2].Value = contacto.Fecha_agregado;
+                fila.Cells[2].Value = contacto.Usuario.Direccion;
                 tabla_contactos.Rows.Add(fila);
             }
-            usuarioSesion = usuario;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -85,6 +91,19 @@ namespace VistaDesktop
         {
             AgregarContacto form_agregar = new AgregarContacto(usuarioSesion);
             form_agregar.ShowDialog();
+            this.cargarDatosContacto(usuarioSesion); //Cuando sale de la pestaña se actualizan los contactos agregados
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+
+        }
+
+        private void verSolicitudes_Click(object sender, EventArgs e)
+        {
+            SolicitudesUsuario solicitudes = new SolicitudesUsuario(usuarioSesion);
+            solicitudes.ShowDialog();
+            cargarDatosContacto(usuarioSesion);
         }
     }
 }

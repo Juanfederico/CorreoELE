@@ -82,6 +82,7 @@
             this.volver.TabIndex = 4;
             this.volver.Text = "Volver";
             this.volver.UseVisualStyleBackColor = true;
+            this.volver.Click += new System.EventHandler(this.volver_Click);
             // 
             // AgregarContacto
             // 

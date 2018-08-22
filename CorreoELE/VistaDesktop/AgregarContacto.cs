@@ -15,6 +15,7 @@ namespace VistaDesktop
     public partial class AgregarContacto : Form
     {
         Usuario usuarioSesion = null;
+        DataGridView tablacontactos = null;
 
         public AgregarContacto(Usuario usuario)
         {
@@ -43,12 +44,17 @@ namespace VistaDesktop
             try
             {
                 int respuesta = contactoAbm.enviarSolicitud(usuarioSesion, direccion.Text);
-                MessageBox.Show(respuesta.ToString());
+                if(respuesta==1) MessageBox.Show("Solicitud enviada al usuario");
             }
             catch(Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void volver_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
