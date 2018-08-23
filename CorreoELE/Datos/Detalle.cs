@@ -12,6 +12,7 @@ namespace Datos
         private String nick;
         private String nombre;
         private String apellido;
+        private String sobremi;
         private DateTime fechacreacion;
 
         public Detalle() { }
@@ -28,7 +29,6 @@ namespace Datos
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido { get => apellido; set => apellido = value; }
         public DateTime Fechacreacion { get => fechacreacion; set => fechacreacion = value; }
-
-
+        public string Sobremi { get => sobremi; set => sobremi = value; }
     }
 }
