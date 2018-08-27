@@ -8,23 +8,22 @@ namespace Datos
 {
     public class Contacto
     {
-        private Usuario usuarioEmisor;
-        private Usuario usuarioReceptor;
+        private int idcontacto;
+        private Usuario usuario;
         private Boolean aceptado;
         private DateTime fecha_agregado;
 
         public Contacto() { }
 
-        public Contacto(Usuario usuarioEmisor, Usuario usuarioReceptor, bool aceptado)
+        public Contacto(Usuario usuario, bool aceptado)
         {
-            this.UsuarioEmisor = usuarioEmisor;
-            this.UsuarioReceptor = usuarioReceptor;
+            this.Usuario = usuario;
             this.Aceptado = aceptado;
         }
 
+        public int Idcontacto { get => idcontacto; set => idcontacto = value; }
+        public Usuario Usuario { get => usuario; set => usuario = value; }
         public bool Aceptado { get => aceptado; set => aceptado = value; }
         public DateTime Fecha_agregado { get => fecha_agregado; set => fecha_agregado = value; }
-        public Usuario UsuarioEmisor { get => usuarioEmisor; set => usuarioEmisor = value; }
-        public Usuario UsuarioReceptor { get => usuarioReceptor; set => usuarioReceptor = value; }
     }
 }

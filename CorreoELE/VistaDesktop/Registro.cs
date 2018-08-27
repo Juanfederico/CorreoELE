@@ -57,7 +57,7 @@ namespace VistaDesktop
             if (password.Text.Equals(confirmpassword.Text))
             {
                 Detalle detalle = new Detalle(nick.Text, nombre.Text, apellido.Text);
-                Usuario usuario = new Usuario(direccion.Text, password.Text, detalle);
+                Usuario usuario = new Usuario(detalle, direccion.Text, password.Text, telefono.Text);
                 UsuarioABM usuarioAbm = new UsuarioABM();
                 int ultimoID = usuarioAbm.RegistrarUsuario(usuario);
                 MessageBox.Show("Usuario registrado correctamente");
@@ -67,6 +67,11 @@ namespace VistaDesktop
             {
                 MessageBox.Show("La dos contraseñas ingresadas son diferentes");
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

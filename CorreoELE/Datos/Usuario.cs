@@ -14,6 +14,7 @@ namespace Datos
         private String password;
         private String telefono;
         private List<Contacto> contactos;
+        private List<Contacto> solicitudes;
         private List<Mail> mails;
 
         public Usuario() { }
@@ -32,6 +33,7 @@ namespace Datos
         public string Password { get => password; set => password = value; }
         public string Telefono { get => telefono; set => telefono = value; }
         public List<Contacto> Contactos { get => contactos; set => contactos = value; }
+        public List<Contacto> Solicitudes { get => solicitudes; set => solicitudes = value; }
         public List<Mail> Mails { get => mails; set => mails = value; }
     }
 }

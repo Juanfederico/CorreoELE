@@ -36,7 +36,7 @@ namespace Dao
             {
                 Conn.Open();
                 //Instanciando en la tabla usuario y guardando el ID
-                String sql_usuario = "INSERT INTO usuario VALUES ('" +usuario.Direccion+ "@correoele.com', HASHBYTES('MD5', '" +usuario.Password+ "'), "+usuario.Detalle.Iddetalle+") SELECT SCOPE_IDENTITY();";
+                String sql_usuario = "INSERT INTO usuario VALUES ("+usuario.Detalle.Iddetalle+", '" +usuario.Direccion+ "@correoele.com', HASHBYTES('MD5', '" +usuario.Password+ "'), '"+usuario.Telefono+"') SELECT SCOPE_IDENTITY();";
                 Comando = new SqlCommand(sql_usuario, Conn);
                 Reader = Comando.ExecuteReader();
                 Reader.Read();
@@ -61,7 +61,7 @@ namespace Dao
             try
             {
                 Conn.Open();
-                String sql_detalle = "INSERT INTO usuario_detalle (nick, nombre, apellido) VALUES ('" + detalle.Nick + "', '" + detalle.Nombre + "', '" + detalle.Apellido + "') SELECT SCOPE_IDENTITY();";
+                String sql_detalle = "INSERT INTO usuario_detalle (nick, nombre, apellido, sobremi) VALUES ('" + detalle.Nick + "', '" + detalle.Nombre + "', '" + detalle.Apellido + "', '"+detalle.Sobremi+"') SELECT SCOPE_IDENTITY();";
                 Comando = new SqlCommand(sql_detalle, Conn);
                 //Instanciando en la tabla usuario_detalle y guardando el ID
                 Reader = Comando.ExecuteReader();
@@ -79,6 +79,47 @@ namespace Dao
                 Reader = null;
             }
             return idDetalle;
+        }
+
+        public Usuario SelectUsuario(int idusuario)
+        {
+            Usuario usuario = null;
+
+            try
+            {
+                Conn.Open();
+                //Instanciando en la tabla usuario y guardando el ID
+                String sql_usuario = "SELECT * FROM usuario u JOIN usuario_detalle d ON u.iddetalle=d.iddetalle WHERE u.idusuario='" + idusuario + "';";
+                Comando = new SqlCommand(sql_usuario, Conn);
+                Reader = Comando.ExecuteReader();
+                Reader.Read();
+                //Instanciando los datos del registro
+                int idUsuario = Convert.ToInt32(Reader["idusuario"].ToString());
+                int idDetalle = Convert.ToInt32(Reader["iddetalle"].ToString());
+                //Detalle
+                String nick = Reader["nick"].ToString();
+                String nombre = Reader["nombre"].ToString();
+                String apellido = Reader["apellido"].ToString();
+                String password = Reader["password"].ToString();
+                Detalle detalle = new Detalle(nick, nombre, apellido);
+                detalle.Iddetalle = idDetalle;
+                //Usuario
+                String direccion = Reader["direccion"].ToString();
+                String telefono = Reader["telefono"].ToString();
+                usuario = new Usuario(detalle, direccion, password, telefono);
+                usuario.Idusuario = idUsuario;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                Conn.Close();
+                Comando = null;
+                Reader = null;
+            }
+            return usuario;
         }
 
         public Usuario SelectUsuario(String direccion, String password)
@@ -104,7 +145,8 @@ namespace Dao
                 Detalle detalle = new Detalle(nick, nombre, apellido);
                 detalle.Iddetalle = idDetalle;
                 //Usuario
-                usuario = new Usuario(direccion, password, detalle);
+                String telefono = Reader["telefono"].ToString();
+                usuario = new Usuario(detalle, direccion, password, telefono);
                 usuario.Idusuario = idUsuario;
             }
             catch (Exception ex)
@@ -144,7 +186,8 @@ namespace Dao
                 Detalle detalle = new Detalle(nick, nombre, apellido);
                 detalle.Iddetalle = idDetalle;
                 //Usuario
-                usuario = new Usuario(direccion, password, detalle);
+                String telefono = Reader["telefono"].ToString();
+                usuario = new Usuario(detalle, direccion, password, telefono);
                 usuario.Idusuario = idUsuario;
             }
             catch (Exception ex)

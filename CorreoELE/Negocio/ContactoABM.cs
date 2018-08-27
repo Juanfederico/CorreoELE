@@ -14,8 +14,9 @@ namespace Negocio
 
         public Contacto traerContacto(int idusuario, String direccion) //De un usuario determinado, una direccion determinada
         {
-            Contacto contactoSeleccionado = null;
-            List<Contacto> contactos = dao.selectContactos(idusuario);
+            Contacto contactoSeleccionado = new Contacto();
+            List<Contacto> contactos = dao.selectContactosEmisor(idusuario);
+            contactos.AddRange(dao.selectContactosReceptor(idusuario));
             foreach(Contacto contacto in contactos)
             {
                 if (contacto.Usuario.Direccion.Equals(direccion))
@@ -27,11 +28,12 @@ namespace Negocio
         }
 
 
-        public int aceptarContacto(int idusuario, String direccion) //El idsuario NO es del del contacto, sino del usuario de la sesión 
+        public int aceptarContacto(int idusuarioSesion, String direccion) //El idsuario NO es del del contacto, sino del usuario de la sesión 
         {
-            Contacto contactoAAceptar = traerContacto(idusuario, direccion);
-            contactoAAceptar.Usuario.Idusuario = idusuario; //Agrego el de la sesión al contacto
-            return dao.updateAceptado(contactoAAceptar, true);
+            UsuarioDao usuarioDao = new UsuarioDao();
+            Contacto contactoAAceptar = traerContacto(idusuarioSesion, direccion);
+            Usuario usuarioSesion = usuarioDao.SelectUsuario(idusuarioSesion); //Agrego el de la sesión al contacto
+            return dao.updateAceptado(usuarioSesion, contactoAAceptar, true);
         }
 
         public int enviarSolicitud(Usuario usuarioEmisor, String direccion) //usuario=quien envía la solicitud, direccion=email del destinatario
@@ -43,23 +45,27 @@ namespace Negocio
             //Condiciones para manejo de excepciones
             if (usuarioEmisor.Direccion.Equals(direccion+"@correoele.com")) throw new Exception("No puede agregarse a usted mismo como contacto");
             if (usuarioReceptor == null) throw new Exception("La dirección ingresada no corresponde a un usuario valido");
-            Contacto contacto = new Contacto(usuarioEmisor, usuarioReceptor.Detalle, false);
-            return dao.InsertContacto(contacto); //1=Agregado correctamente, 0 o -1= Error
+            Contacto contacto = new Contacto(usuarioReceptor, true);
+            return dao.InsertContacto(usuarioEmisor, contacto); //1=Agregado correctamente, 0 o -1= Error
         }
 
         public List<Contacto> traerContactosUsuario(int idusuario)
         {
             List<Contacto> contactosAceptados = new List<Contacto>();
-            foreach (Contacto contacto in dao.selectContactos(idusuario)){
+            List<Contacto> contactos = dao.selectContactosEmisor(idusuario);
+            contactos.AddRange(dao.selectContactosReceptor(idusuario));
+
+            foreach (Contacto contacto in contactos){
                 if (contacto.Aceptado) contactosAceptados.Add(contacto);
             }
             return contactosAceptados;
         }
 
-        public List<Contacto> traerSolicitudesUsuario(int iddetalle_usuario)
+        public List<Contacto> traerSolicitudesUsuario(int idusuario) //Usuario sesion (para el contexto que aplica es para el Receptor)
         {
             List<Contacto> contactosAceptados = new List<Contacto>();
-            foreach (Contacto contacto in dao.selectContactos(iddetalle_usuario))
+            List<Contacto> contactos = dao.selectContactosReceptor(idusuario);
+            foreach (Contacto contacto in contactos)
             {
                 if (!contacto.Aceptado) contactosAceptados.Add(contacto);
             }
@@ -69,6 +75,7 @@ namespace Negocio
         public int eliminarContacto(int idusuario, String direccion)
         {
             Contacto contactoAEliminar = traerContacto(idusuario, direccion);
+            dao.deleteContactoEmisor
             return dao.deleteContacto(contactoAEliminar);
         }
     }

@@ -44,6 +44,8 @@
             this.label_direccion2 = new System.Windows.Forms.Label();
             this.registrar = new System.Windows.Forms.Button();
             this.volver_login = new System.Windows.Forms.Button();
+            this.telefono = new System.Windows.Forms.TextBox();
+            this.label_telefono = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label_correoele
@@ -169,7 +171,7 @@
             // 
             // registrar
             // 
-            this.registrar.Location = new System.Drawing.Point(176, 268);
+            this.registrar.Location = new System.Drawing.Point(176, 284);
             this.registrar.Name = "registrar";
             this.registrar.Size = new System.Drawing.Size(75, 23);
             this.registrar.TabIndex = 14;
@@ -179,7 +181,7 @@
             // 
             // volver_login
             // 
-            this.volver_login.Location = new System.Drawing.Point(176, 303);
+            this.volver_login.Location = new System.Drawing.Point(176, 312);
             this.volver_login.Name = "volver_login";
             this.volver_login.Size = new System.Drawing.Size(75, 23);
             this.volver_login.TabIndex = 15;
@@ -187,11 +189,30 @@
             this.volver_login.UseVisualStyleBackColor = true;
             this.volver_login.Click += new System.EventHandler(this.volver_login_Click);
             // 
+            // telefono
+            // 
+            this.telefono.Location = new System.Drawing.Point(164, 258);
+            this.telefono.Name = "telefono";
+            this.telefono.Size = new System.Drawing.Size(100, 20);
+            this.telefono.TabIndex = 17;
+            // 
+            // label_telefono
+            // 
+            this.label_telefono.AutoSize = true;
+            this.label_telefono.Location = new System.Drawing.Point(48, 261);
+            this.label_telefono.Name = "label_telefono";
+            this.label_telefono.Size = new System.Drawing.Size(49, 13);
+            this.label_telefono.TabIndex = 16;
+            this.label_telefono.Text = "Telefono";
+            this.label_telefono.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(426, 338);
+            this.Controls.Add(this.telefono);
+            this.Controls.Add(this.label_telefono);
             this.Controls.Add(this.volver_login);
             this.Controls.Add(this.registrar);
             this.Controls.Add(this.label_direccion2);
@@ -234,5 +255,7 @@
         private System.Windows.Forms.Label label_direccion2;
         private System.Windows.Forms.Button registrar;
         private System.Windows.Forms.Button volver_login;
+        private System.Windows.Forms.TextBox telefono;
+        private System.Windows.Forms.Label label_telefono;
     }
 }
