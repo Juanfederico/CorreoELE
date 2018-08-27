@@ -75,7 +75,6 @@ namespace Negocio
         public int eliminarContacto(int idusuario, String direccion)
         {
             Contacto contactoAEliminar = traerContacto(idusuario, direccion);
-            dao.deleteContactoEmisor
             return dao.deleteContacto(contactoAEliminar);
         }
     }

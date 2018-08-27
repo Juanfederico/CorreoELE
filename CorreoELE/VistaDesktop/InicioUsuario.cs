@@ -34,8 +34,8 @@ namespace VistaDesktop
             foreach (Contacto contacto in contactos)
             {
                 fila = (DataGridViewRow)tabla_contactos.Rows[0].Clone();
-                fila.Cells[0].Value = contacto.Detallecontacto.Nick;
-                fila.Cells[1].Value = contacto.Detallecontacto.Nombre;
+                fila.Cells[0].Value = contacto.Usuario.Detalle.Nick;
+                fila.Cells[1].Value = contacto.Usuario.Detalle.Nombre;
                 fila.Cells[2].Value = contacto.Usuario.Direccion;
                 tabla_contactos.Rows.Add(fila);
             }

@@ -50,6 +50,7 @@ namespace Dao
                     usuario.Detalle.Nick = Reader["nick"].ToString();
                     usuario.Detalle.Nombre = Reader["nombre"].ToString();
                     usuario.Detalle.Apellido = Reader["apellido"].ToString();
+                    contacto.Idcontacto = Convert.ToInt32(Reader["idcontacto"].ToString());
                     contacto.Aceptado = Convert.ToBoolean(Reader["aceptado"].ToString());
                     contacto.Fecha_agregado = Convert.ToDateTime(Reader["fecha_agregado"].ToString());
                     //Agregando datos a contacto
@@ -92,6 +93,7 @@ namespace Dao
                     usuario.Detalle.Nick = Reader["nick"].ToString();
                     usuario.Detalle.Nombre = Reader["nombre"].ToString();
                     usuario.Detalle.Apellido = Reader["apellido"].ToString();
+                    contacto.Idcontacto = Convert.ToInt32(Reader["idcontacto"].ToString());
                     contacto.Aceptado = Convert.ToBoolean(Reader["aceptado"].ToString());
                     contacto.Fecha_agregado = Convert.ToDateTime(Reader["fecha_agregado"].ToString());
                     //Agregando datos a contacto
@@ -144,7 +146,7 @@ namespace Dao
             try
             {
                 Conn.Open();
-                String sql_detalle = "UPDATE contacto SET aceptado=" + Convert.ToInt32(aceptado) + " WHERE idusuario_emisor=" + contacto.Usuario.Idusuario + " and idusuario_receptor=" + usuario.Idusuario + ";";
+                String sql_detalle = "UPDATE contacto SET aceptado=" + Convert.ToInt32(aceptado) + " WHERE idusuario_emisor=" + contacto.Usuario.Idusuario + " AND idusuario_receptor=" + usuario.Idusuario + ";";
                 Comando = new SqlCommand(sql_detalle, Conn);
                 //Eliminando de la tabla contacto, devuelve 1 si se insertó correctamente
                 updateCorrecto = Comando.ExecuteNonQuery();
@@ -162,37 +164,13 @@ namespace Dao
             return updateCorrecto;
         }
 
-        public int deleteContactoEmisor(Contacto contacto)
+        public int deleteContacto(Contacto contacto)
         {
             int deleteCorrecto = -1; //Falso por defecto
             try
             {
                 Conn.Open();
-                String sql_detalle = "DELETE FROM contacto WHERE idusuario_emisor="+contacto.Usuario.Idusuario+";";
-                Comando = new SqlCommand(sql_detalle, Conn);
-                //Eliminando de la tabla contacto, devuelve 1 si se insertó correctamente
-                deleteCorrecto = Comando.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            finally
-            {
-                Conn.Close();
-                Comando = null;
-                Reader = null;
-            }
-            return deleteCorrecto;
-        }
-
-        public int deleteContactoReceptor(Contacto contacto)
-        {
-            int deleteCorrecto = -1; //Falso por defecto
-            try
-            {
-                Conn.Open();
-                String sql_detalle = "DELETE FROM contacto WHERE idusuario_receptor=" + contacto.Usuario.Idusuario + ";";
+                String sql_detalle = "DELETE FROM contacto WHERE idcontacto=" + contacto.Idcontacto + ";";
                 Comando = new SqlCommand(sql_detalle, Conn);
                 //Eliminando de la tabla contacto, devuelve 1 si se insertó correctamente
                 deleteCorrecto = Comando.ExecuteNonQuery();
