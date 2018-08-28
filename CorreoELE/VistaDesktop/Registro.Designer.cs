@@ -194,7 +194,7 @@
             this.telefono.Location = new System.Drawing.Point(164, 258);
             this.telefono.Name = "telefono";
             this.telefono.Size = new System.Drawing.Size(100, 20);
-            this.telefono.TabIndex = 17;
+            this.telefono.TabIndex = 13;
             // 
             // label_telefono
             // 

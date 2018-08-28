@@ -31,29 +31,31 @@ namespace Dao
 
         public List<Contacto> selectContactosEmisor(int idusuario) //ID del usuario emisor
         {
-            List <Contacto> contactos = null;
+            List<Contacto> contactos = null;
             try
             {
                 Conn.Open();
                 //Instanciando en la tabla usuario y guardando el ID
-                String sql_usuario = "SELECT * from Vista_contactos WHERE idusuario_emisor=" +idusuario+";";
+                String sql_usuario = "SELECT * from Vista_emisores WHERE idusuario=" + idusuario + ";";
                 Comando = new SqlCommand(sql_usuario, Conn);
                 Reader = Comando.ExecuteReader();
                 //Instanciando los datos del registro
                 contactos = new List<Contacto>();//Inicializando lista
                 Contacto contacto = new Contacto();
                 Usuario usuario = new Usuario();
+                Detalle detalle = new Detalle();
                 while (Reader.Read())
                 {
-                    usuario.Direccion = Reader["direccion"].ToString();
-                    usuario.Idusuario = Convert.ToInt32(Reader["idusuario"].ToString());
-                    usuario.Detalle.Nick = Reader["nick"].ToString();
-                    usuario.Detalle.Nombre = Reader["nombre"].ToString();
-                    usuario.Detalle.Apellido = Reader["apellido"].ToString();
                     contacto.Idcontacto = Convert.ToInt32(Reader["idcontacto"].ToString());
+                    usuario.Idusuario = Convert.ToInt32(Reader["idusuario_emisor"].ToString());
+                    usuario.Direccion = Reader["direccion"].ToString();
+                    detalle.Nick = Reader["nick"].ToString();
+                    detalle.Nombre = Reader["nombre"].ToString();
+                    detalle.Apellido = Reader["apellido"].ToString();
                     contacto.Aceptado = Convert.ToBoolean(Reader["aceptado"].ToString());
                     contacto.Fecha_agregado = Convert.ToDateTime(Reader["fecha_agregado"].ToString());
                     //Agregando datos a contacto
+                    usuario.Detalle = detalle;
                     contacto.Usuario = usuario;
                     contactos.Add(contacto);
                     contacto = null;
@@ -72,31 +74,33 @@ namespace Dao
             return contactos;
         }
 
-        public List<Contacto> selectContactosReceptor(int idusuario) //ID del usuario receptor
+        public List<Contacto> selectContactosReceptor(int idusuario) //ID del usuario receptor, Vista_solicitudes=receptores, idusuario=el de la sesion
         {
             List<Contacto> contactos = null;
             try
             {
                 Conn.Open();
                 //Instanciando en la tabla usuario y guardando el ID
-                String sql_usuario = "SELECT * from Vista_contactos WHERE idusuario_receptor=" + idusuario + ";";
+                String sql_usuario = "SELECT * from Vista_solicitudes WHERE idusuario=" + idusuario + ";";
                 Comando = new SqlCommand(sql_usuario, Conn);
                 Reader = Comando.ExecuteReader();
                 //Instanciando los datos del registro
                 contactos = new List<Contacto>();//Inicializando lista
                 Contacto contacto = new Contacto();
                 Usuario usuario = new Usuario();
+                Detalle detalle = new Detalle();
                 while (Reader.Read())
                 {
-                    usuario.Direccion = Reader["direccion"].ToString();
-                    usuario.Idusuario = Convert.ToInt32(Reader["idusuario"].ToString());
-                    usuario.Detalle.Nick = Reader["nick"].ToString();
-                    usuario.Detalle.Nombre = Reader["nombre"].ToString();
-                    usuario.Detalle.Apellido = Reader["apellido"].ToString();
                     contacto.Idcontacto = Convert.ToInt32(Reader["idcontacto"].ToString());
+                    usuario.Idusuario = Convert.ToInt32(Reader["idusuario_solicitud"].ToString());
+                    usuario.Direccion = Reader["direccion"].ToString();
+                    detalle.Nick = Reader["nick"].ToString();
+                    detalle.Nombre = Reader["nombre"].ToString();
+                    detalle.Apellido = Reader["apellido"].ToString();
                     contacto.Aceptado = Convert.ToBoolean(Reader["aceptado"].ToString());
                     contacto.Fecha_agregado = Convert.ToDateTime(Reader["fecha_agregado"].ToString());
                     //Agregando datos a contacto
+                    usuario.Detalle = detalle;
                     contacto.Usuario = usuario;
                     contactos.Add(contacto);
                     contacto = null;

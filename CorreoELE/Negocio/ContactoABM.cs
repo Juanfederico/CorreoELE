@@ -63,13 +63,13 @@ namespace Negocio
 
         public List<Contacto> traerSolicitudesUsuario(int idusuario) //Usuario sesion (para el contexto que aplica es para el Receptor)
         {
-            List<Contacto> contactosAceptados = new List<Contacto>();
+            List<Contacto> contactosPendientes = new List<Contacto>();
             List<Contacto> contactos = dao.selectContactosReceptor(idusuario);
             foreach (Contacto contacto in contactos)
             {
-                if (!contacto.Aceptado) contactosAceptados.Add(contacto);
+                if (!contacto.Aceptado) contactosPendientes.Add(contacto);
             }
-            return contactosAceptados;
+            return contactosPendientes;
         }
 
         public int eliminarContacto(int idusuario, String direccion)
